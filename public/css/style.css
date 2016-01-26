@@ -5,12 +5,8 @@ body                    { background-color:#10ABFD;}
 #blah                   {font-family: "Times New Roman", Georgia, Serif; font-size: 20px; width: 400px;}
 /*#blah:nth-child(odd) { background: yellow; }*/
 
-.navbar {
-    background: transparent;
-}
-
-.navbar-fixed-top
-    {
-    position: relative;
+.navbar .navbar-default {
+   background-color: transparent;
+   position: relative;
     top: auto;
-    }
+}
