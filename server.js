@@ -12,7 +12,7 @@ var fs = require('fs');
 var path = require('path');
 var methodOverride = require('method-override');
 
-mongoose.connect('mongodb://localhost/geospatial_db'), function(err) {
+mongoose.connect('mongodb://leonab:password@ds039674.mongolab.com:39674/foody'), function(err) {
   if (err) throw err;
 /*
  // load data from file and transform it to Object
@@ -39,7 +39,7 @@ mongoose.connect('mongodb://localhost/geospatial_db'), function(err) {
 
 };
 
-
+var port= process.env.PORT || 3000;
 app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'})); // parse application/x-www-form-urlencoded
@@ -53,6 +53,6 @@ app.use(methodOverride('X-HTTP-Method-Override'))
 require('./app/routes.js')(app);
 
 
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("App listening on port 3000");
 });   
