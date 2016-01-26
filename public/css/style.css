@@ -2,7 +2,7 @@ html                    { overflow-y:scroll; }
 body                    { background-color:#10ABFD;}
 #yo                     { padding-top:70px; background: #fff;}
 #todo-list              { padding-top:70px; margin-left:0px; margin-bottom:30px; background: #fff; }
-#blah                   {font-family: "Times New Roman", Georgia, Serif; font-size: 20px; width: 400px;}
+#blah                   {font-family: "Times New Roman", Georgia, Serif; font-size: 20px; width: 300px;}
 /*#blah:nth-child(odd) { background: yellow; }*/
 
 .navbar {
