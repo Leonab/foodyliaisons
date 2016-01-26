@@ -1,10 +1,13 @@
 html                    { overflow-y:scroll; }
-body                    { padding-top:70px;background-color:#10ABFD;}
-#yo                     { background: #fff;}
-#todo-list              { margin-bottom:30px;background: #fff; }
+body                    { background-color:#10ABFD;}
+#yo                     { padding-top:70px; background: #fff;}
+#todo-list              { padding-top:70px; margin-bottom:30px; background: #fff; }
 #blah                   {font-family: "Times New Roman", Georgia, Serif; font-size: 20px; width: 400px;}
 /*#blah:nth-child(odd) { background: yellow; }*/
 
 .navbar {
     background: transparent;
+	position: fixed;
+	width: 100%;
+	margin-top: 0px;
 }
