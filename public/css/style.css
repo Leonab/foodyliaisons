@@ -7,8 +7,10 @@ body                    { background-color:#10ABFD;}
 
 .navbar {
 	background: transparent;
+	size: contain;
 }
 .navbar-default {
    position: relative;
     top: auto;
+	size: contain;
 }
