@@ -1,10 +1,10 @@
 {
-  "name": "simple-geolocation",
+  "name": "MyApp",
   "version": "0.0.1",
-  "description": "Geospatial Indexing in MongoDB using Express and Mongoose",
-  "main": "app.js",
+  "description": "Location Biased searching",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "dependencies": {
     "async": "0.2.10",
