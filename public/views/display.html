@@ -1,0 +1,51 @@
+<div id="todo-list" class="row">
+<h3>Showing <span class="label label-info">{{ locations.length }}</span> results :</h3>
+<h3><button ng-click="showall()" ui-sref="search" class="btn btn-danger">Show All</button></h3>
+			<div ng-app="modalFormApp">
+			<div ng-controller="modalAccountFormController">
+			<div id="blah" class="col-md-offset-5">
+			
+
+			<!--div ng-controller="AccordionDemoCtrl">
+  <script type="text/ng-template" id="group-template.html">
+    <div class="panel {{panelClass || 'panel-default'}}">
+      <div class="panel-heading">
+        <h4 class="panel-title" style="color:#fa39c3">
+          <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span
+            ng-class="{'text-muted': isDisabled}">{{heading}}</span></a>
+        </h4>
+      </div>
+      <div class="panel-collapse collapse" uib-collapse="!isOpen">
+        <div class="panel-body" style="text-align: right" ng-transclude></div>
+      </div>
+    </div>
+  </script>
+                </div-->
+
+                <!-- LOOP OVER THE TODOS IN $scope.todos -->
+				<v-accordion class="vAccordion--default" multiple>
+				<v-pane ng-repeat="location in locations" >
+				<v-pane-header>
+                 {{ ::location.name }}
+                </v-pane-header>
+				<v-pane-content>
+				{{::location.text}}
+				<button ng-click="showForm()" class="btn btn-success">Send</button>
+				</v-pane-content>
+               </v-pane>
+				</v-accordion>
+				
+				</div>
+    </div>
+				
+				
+				<p class="text-center" ng-show="loading">
+					<span class="fa fa-spinner fa-spin fa-3x"></span>
+				</p>
+
+            </div>
+</div>
+
+
+
+

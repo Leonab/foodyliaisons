@@ -1,0 +1,22 @@
+<div id="yo" class="jumbotron text-center">
+            <h1>Vicinity</h1>
+        </div>
+
+        <!-- TODO LIST -->
+        
+
+        <!-- FORM TO CREATE TODOS -->
+        <div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+
+                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                        <input id="address" type="text" class="form-control input-lg text-center" placeholder="Location" ng-model="formData.text">
+                    </div>
+
+                    <!-- createToDo() WILL CREATE NEW TODOS -->
+                    <button  type="submit" class="btn btn-primary btn-lg" ui-sref="search" ng-click="geocode()" ng-keypress="myFunct($event)">Search</button>
+                </form>
+            </div>
+        </div>
