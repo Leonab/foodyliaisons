@@ -8,3 +8,9 @@ body                    { padding-top:70px;background-color:#10ABFD;}
 .navbar {
     background: transparent;
 }
+
+.navbar-fixed-top
+    {
+    position: relative;
+    top: auto;
+    }
