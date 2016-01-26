@@ -5,8 +5,10 @@ body                    { background-color:#10ABFD;}
 #blah                   {font-family: "Times New Roman", Georgia, Serif; font-size: 20px; width: 400px;}
 /*#blah:nth-child(odd) { background: yellow; }*/
 
-.navbar .navbar-default {
-   background-color: transparent;
+.navbar {
+	background: transparent;
+}
+.navbar-default {
    position: relative;
     top: auto;
 }
