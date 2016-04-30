@@ -70,7 +70,7 @@ angular.module('locationController', ['ui.router'])
 		        });
 		        });
 	}
-	$scope.formData = {};
+	//$scope.formData = {};
 	//formData.$setPristine();
 	//formData.$setUntouched();
 	};

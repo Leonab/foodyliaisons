@@ -66,9 +66,9 @@ app.get('/api/query', function(req, res, next){
 
     // get coordinates [ <longitude> , <latitude> ]
     var coords = [];
-    coords[0] = req.query.longitude || 0;
-    coords[1] = req.query.latitude || 0;	
-	console.log(req.params.longitude);
+    coords[0] = req.query.longitude || 77.22336;
+    coords[1] = req.query.latitude || 28.6375771;	
+	console.log(req.query.latitude);
 	console.log(req.query.longitude);
 
         Location.find({     // find a location

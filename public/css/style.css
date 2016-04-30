@@ -6,7 +6,6 @@ body                    { background-color:#10ABFD;}
 /*#blah:nth-child(odd) { background: yellow; }*/
 
 .navbar {
-	background: transparent;
 	size: contain;
 }
 .navbar-default {
