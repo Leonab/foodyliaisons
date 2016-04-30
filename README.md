@@ -3,5 +3,5 @@ Prototype for FoodyLiaisons
 
 Just download the code-
 
-npm install
+npm install -->
 node server.js
