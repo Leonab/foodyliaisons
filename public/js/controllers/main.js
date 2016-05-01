@@ -1,13 +1,13 @@
 angular.module('locationController', ['ui.router'])
 
-	// inject the Todo service factory into our controller
+	// inject the service factory into our controller
 	.controller('mainController', ['$scope','$http','Locations', function($scope, $http, Locations) {
 		$scope.formData = {};
 		$scope.loading = true;
 
 		// GET =====================================================================
-		// when landing on the page, get all todos and show them
-		// use the service to get all the todos
+		// when landing on the page, get all 
+		// use the service
 		$scope.showall = function() {
 		Locations.get()
 			.success(function(data) {
