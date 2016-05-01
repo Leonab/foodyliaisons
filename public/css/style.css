@@ -1,15 +1,21 @@
-html                    { overflow-y:scroll; }
-body                    { background-color:#10ABFD;}
-#yo                     { padding-top:70px; background: #fff;}
+/*html                    { overflow-y:scroll; overflow-x:scroll;}*/
+body                    { background-color:#fff;}
+/*#yo                     { padding-top:70px; background: #10ABFD;}*/
 #todo-list              { padding-top:70px; margin-left:0px; margin-bottom:30px; background: #fff; }
-#blah                   {font-family: "Times New Roman", Georgia, Serif; font-size: 20px; width: 300px;}
+/*#blah                   {font-family: "Times New Roman", Georgia, Serif; font-size: 20px; width: 300px;}
 /*#blah:nth-child(odd) { background: yellow; }*/
 
-.navbar {
-	size: contain;
+#haha {
+	margin-top: 180px;
 }
-.navbar-default {
-   position: relative;
-    top: auto;
-	size: contain;
+
+md-toolbar {
+	padding: 0px;
+	margin-top: 2px;
 }
+
+md-button {
+	margin:auto;
+    display:block;
+}
+

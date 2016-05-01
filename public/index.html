@@ -14,33 +14,41 @@
     <link rel="stylesheet" href="css/style.css">
 	<link href="css/v-accordion.css" rel="stylesheet" />
 	
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css"><!-- Angular Material-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+	<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' />
+ 
+	
     <!-- SPELLS -->
 	
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
 	<script src="js/ui-bootstrap-tpls-0.9.0.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
 	<script src="js/v-accordion.js"></script>
 	
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true" type="text/javascript"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script><!-- load angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+	
+	<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
 	
 	
 	<script src="js/core.js"></script>
 	<script src="js/controllers/main.js"></script>
-    <script src="js/controllers/modal.js"></script>	<!-- load up our controller -->
-	<script src="js/services/locations.js"></script> <!-- load our todo service -->
+    <script src="js/controllers/modal.js"></script>
+	<script src="js/services/locations.js"></script> 
 
 </head>
-<!-- SET THE CONTROLLER AND GET ALL TODOS -->
 <body ng-controller="mainController">
 
-<header>
+<!--header>
             <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">ProximityApp</a>
+                    <a class="navbar-brand" href="/">FoodyLiaisons</a>
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -50,12 +58,30 @@
                 </ul>
             </div>
             </nav>
-        </header>
-
+        </header-->
+		
+		
+	<md-toolbar>
+      <div class="md-toolbar-tools default">
+        <h2>
+          <span><a href="/"> FoodyLiaisons</a></span>
+        </h2>
+        <span flex></span>
+        <md-button aria-label="Home" ui-sref="home">
+          Home
+        </md-button>
+        <md-button aria-label="About" ui-sref="about">
+          About
+        </md-button>
+		<md-button aria-label="Contact" ui-sref="contact">
+          Contact Us
+        </md-button>
+      </div>
+    </md-toolbar>
+	
     <div class="container1">
 	
         <div ui-view></div>
-        <!-- HEADER AND TODO COUNT -->
         
 
     </div>
