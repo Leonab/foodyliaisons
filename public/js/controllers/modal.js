@@ -1,4 +1,4 @@
-angular.module("modalFormApp", ['ui.bootstrap','ngAnimate'])
+angular.module("modalFormApp", ['ui.bootstrap','ngAnimate','ngMaterial'])
 .controller("modalAccountFormController", ['$scope', '$modal', '$log',
 
     function ($scope, $modal, $log) {
@@ -26,12 +26,33 @@ angular.module("modalFormApp", ['ui.bootstrap','ngAnimate'])
         };
             }]);
 
-var ModalInstanceCtrl = function ($scope, $modalInstance, userForm) {
+var ModalInstanceCtrl = function ($scope, $modalInstance, userForm, $http) {
     $scope.form = {}
     $scope.submitForm = function () {
         if ($scope.form.userForm.$valid) {
             console.log('user form is in scope');
-			//post here
+			
+			
+			$http({
+              method  : 'POST',
+              url     : '/api/users/',
+              data    : $scope.form,  // pass in data as strings
+               headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            })
+            .success(function(data) {
+             console.log(data);
+			
+              if (!data.success) {
+               // if not successful, bind errors to error variables
+              console.log("error");
+              } else {
+               // if successful, bind success message to message
+              $scope.message = data.message;
+              }
+              });
+            
+			
+			
             $modalInstance.close('closed');
         } else {
             console.log('userform is not in scope');

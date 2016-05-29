@@ -17,6 +17,13 @@
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css"><!-- Angular Material-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
 	<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' />
+	
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+	
+	
+	<!--link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.1/bootstrap-material-design.css">
+	<link rel="stylesheet" href="css/ripple.css"-->
  
 	
     <!-- SPELLS -->
@@ -36,29 +43,19 @@
 	<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
 	
 	
+
+	
+	
 	<script src="js/core.js"></script>
 	<script src="js/controllers/main.js"></script>
     <script src="js/controllers/modal.js"></script>
 	<script src="js/services/locations.js"></script> 
+	<script src="js/services/users.js"></script>
+	<!--script src="js/material.js"></script>
+    <script src="js/ripples.js"></script-->
 
 </head>
 <body ng-controller="mainController">
-
-<!--header>
-            <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">FoodyLiaisons</a>
-                </div>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a ui-sref="home"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a ui-sref="about"><i class="fa fa-shield"></i> About</a></li>
-                    <li><a ui-sref="contact"><i class="fa fa-comment"></i> Contact</a></li>
-                </ul>
-            </div>
-            </nav>
-        </header-->
 		
 		
 	<md-toolbar>
@@ -79,11 +76,13 @@
       </div>
     </md-toolbar>
 	
-    <div class="container1">
 	
-        <div ui-view></div>
+    <div class="">
+	
+        <div ui-view id="null"></div>
         
 
     </div>
+	
 </body>
 </html>

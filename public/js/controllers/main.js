@@ -1,7 +1,7 @@
 angular.module('locationController', ['ui.router'])
 
 	// inject the service factory into our controller
-	.controller('mainController', ['$scope','$http','Locations', function($scope, $http, Locations) {
+	.controller('mainController', ['$scope','$http','Locations','Users', function($scope, $http, Locations, Users) {
 		$scope.formData = {};
 		$scope.loading = true;
 
@@ -31,6 +31,23 @@ angular.module('locationController', ['ui.router'])
 						$scope.locations = data; // assign our new list of locations
 					});
 			}
+		};
+		
+		
+		
+		$scope.createUser = function(rest) {
+			
+			//if ($scope.formData.text != undefined) {
+				
+        Users.create(rest)
+
+					// if successful creation, call our get function to get all the new locations
+					.success(function(data) {
+						$scope.loading = false;
+						$scope.formData = {}; // clear the form so our user is ready to enter another
+						$scope.users = data; // assign our new list of locations
+					});
+			
 		};
 
     // delete a todo after checking it
@@ -67,6 +84,7 @@ angular.module('locationController', ['ui.router'])
 			.success(function(data) {
 			        $scope.loading = false;
 			        $scope.locations = data;
+					
 		        });
 		        });
 	}
@@ -74,9 +92,13 @@ angular.module('locationController', ['ui.router'])
 	//formData.$setPristine();
 	//formData.$setUntouched();
 	};
+	
+   
 	}])
 	
-	
+  
+  
+  
 	
 	
 	.config(function($stateProvider, $urlRouterProvider, $locationProvider) {

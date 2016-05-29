@@ -14,7 +14,7 @@
         <!-- ADDRESS -->
         <md-input-container >
             <label>Address</label>
-            <input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" required>
+            <input type="text" name="address" class="form-control" ng-model="user.username" ng-minlength="3" required>
             <p ng-show="form.userForm.username.$error.minlength" class="help-block">Address is too short.</p>
         </md-input-container >
 
@@ -28,9 +28,22 @@
 		<!-- PHONE NUMBER -->
 		<md-input-container >
             <label>Phone Number</label>
-            <input type="text" name="phone" class="form-control" ng-model="phone" required>
-            <p ng-show="form.userForm.phone.$invalid && !form.userForm.phone.$pristine" class="help-block">Enter a valid email.</p>
+            <input type="number" name="phone" class="form-control" ng-model="phone" required>
+            <p ng-show="form.userForm.phone.$invalid && !form.userForm.phone.$pristine" class="help-block">Enter a valid phone number.</p>
         </md-input-container >
+		
+		<md-radio-group>
+		<label>Is The Item Perishable?</label>
+		<md-radio-button name="perishable" value="True">Yes</md-radio-button>
+		<md-radio-button value="False" class="md-primary">No</md-radio-button>
+		</md-radio-group>
+		
+		<md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-click="True">
+        Today's Pickup?
+        </md-switch>
+		
+		<!--h4>or Choose Date</h4>
+        <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker-->
 
     </div>
     <div class="modal-footer">

@@ -2,7 +2,9 @@
 [
   {
     "name": "SPYM1",
-	"text": "BLah at its best",
+	"description": "BLah at its best",
+	"phone":"",
+	"email":"",
     "loc": [
       77.241086,
       28.641167
@@ -10,7 +12,9 @@
   },
   {
     "name": "SPYM2",
-	"text": "YOLO 2",
+	"description": "YOLO 2",
+	"phone":"",
+	"email":"",
     "loc": [
       77.224965,
       28.661923
@@ -18,7 +22,9 @@
   },
    {
     "name": "SPYM3",
-	"text": "Yakana",
+	"description": "Yakana",
+	"phone":"",
+	"email":"",
     "loc": [
       77.232123,
       28.65645
@@ -26,7 +32,9 @@
   },
    {
     "name": "SPYM4",
-	"text": "Yulaw 4",
+	"description": "Yulaw 4",
+	"phone":"",
+	"email":"",
     "loc": [
       77.238705,
       28.655838
@@ -34,7 +42,9 @@
   },
    {
     "name": "SPYM5",
-	"text": "YOLO 5",
+	"description": "YOLO 5",
+	"phone":"",
+	"email":"",
     "loc": [
       77.224708,
       28.642701
@@ -42,7 +52,9 @@
   },
    {
     "name": "SPYM6",
-	"text": "YOLO 6",
+	"description": "YOLO 6",
+	"phone":"",
+	"email":"",
     "loc": [
       77.232993,
       28.641784
@@ -50,7 +62,9 @@
   },
    {
     "name": "SPYM7",
-	"text": "YOLO 7",
+	"description": "YOLO 7",
+	"phone":"",
+	"email":"",
     "loc": [
       77.209021,
       28.613939
@@ -58,7 +72,9 @@
   },
    {
     "name": "SPYM8",
-	"text": "YOLO 8",
+	"description": "YOLO 8",
+	"phone":"",
+	"email":"",
     "loc": [
       77.22866,
       28.64272
@@ -66,7 +82,9 @@
   },
    {
     "name": "SPYM9",
-	"text": "YOLO 9",
+	"description": "YOLO 9",
+	"phone":"",
+	"email":"",
     "loc": [
       77.219678,
       28.644371
@@ -74,7 +92,9 @@
   },
    {
     "name": "SPYM10",
-	"text": "YOLO 10",
+	"description": "YOLO 10",
+	"phone":"",
+	"email":"",
     "loc": [
       77.233442,
       28.650679
@@ -82,7 +102,9 @@
   },
    {
     "name": "SPYM11",
-	"text": "YOLO 11",
+	"description": "YOLO 11",
+	"phone":"",
+	"email":"",
     "loc": [
       77.241234,
       28.649294
@@ -90,7 +112,9 @@
   },
   {
     "name": "SPYM12",
-	"text": "YOLO 12",
+	"description": "YOLO 12",
+	"phone":"",
+	"email":"",
     "loc": [
       77.234601,
       28.651621
@@ -98,7 +122,9 @@
   },
   {
     "name": "SPYM13",
-	"text": "YOLO 13",
+	"description": "YOLO 13",
+	"phone":"",
+	"email":"",
     "loc": [
       77.223371,
       28.51863
@@ -106,7 +132,9 @@
   },
   {
     "name": "SPYM14",
-	"text": "YOLO 14",
+	"description": "YOLO 14",
+	"phone":"",
+	"email":"",
     "loc": [
       77.257217,
       28.526819
@@ -114,7 +142,9 @@
   },
   {
     "name": "SPYM15",
-	"text": "YOLO 15",
+	"description": "YOLO 15",
+	"phone":"",
+	"email":"",
     "loc": [
       77.263863,
       28.577961
@@ -122,7 +152,9 @@
   },
   {
     "name": "SPYM16",
-	"text": "YOLO 16",
+	"description": "YOLO 16",
+	"phone":"",
+	"email":"",
     "loc": [
       77.260562,
       28.59061
@@ -130,7 +162,9 @@
   },
   {
     "name": "SPYM17",
-	"text": "YOLO 17",
+	"description": "YOLO 17",
+	"phone":"",
+	"email":"",
     "loc": [
       77.265902,
       28.554996
@@ -138,7 +172,9 @@
   },
   {
     "name": "SPYM18",
-	"text": "YOLO 18",
+	"description": "YOLO 18",
+	"phone":"",
+	"email":"",
     "loc": [
       77.304342,
       28.489972
@@ -146,7 +182,9 @@
   },
   {
     "name": "SPYM19",
-	"text": "YOLO 19",
+	"description": "YOLO 19",
+	"phone":"",
+	"email":"",
     "loc": [
       77.249595,
       28.548275
@@ -154,7 +192,9 @@
   },
   {
     "name": "SPYM20",
-	"text": "YOLO 20",
+	"description": "YOLO 20",
+	"phone":"",
+	"email":"",
     "loc": [
       77.245335,
       28.562883

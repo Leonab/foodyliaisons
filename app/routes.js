@@ -1,10 +1,24 @@
 var mongoose = require('mongoose'),
-    location = require('./models/location')();
+    location = require('./models/location')()
+	user = require('./models/user')();
 var Location = mongoose.model('Location');
+var User = mongoose.model('User');
 var Storage = require('./models/storage');
 
 function getLocation(res){
 	Location.find(function(err, docs) {
+
+			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+			if (err)
+				return res.send(err);
+			console.log(err);
+            console.log(docs);
+			return res.json(docs); // return all todos in JSON format
+		});
+};
+
+function getUser(res){
+	User.findOne().sort({created_at: -1}).exec(function(err, docs) {
 
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
@@ -26,7 +40,7 @@ app.get('/api/locations', function(req, res) {
 	
 app.post('/api/locations/', function(req, res) {
 
-        // create a todo, information comes from AJAX request from Angular
+        // create, information comes from AJAX request from Angular
         Location.create({
             text : req.body.text,
             done : false
@@ -36,6 +50,34 @@ app.post('/api/locations/', function(req, res) {
 
             // get and return all the todos after you create another
             getLocation(res);
+        });
+
+    });
+	
+app.post('/api/users/', function(req, res) {
+
+        var name = req.body.name,
+			address = req.body.address,
+			email= req.body.email,
+			phone= req.body.phone,
+			perishable= req.body.perishable,
+			pick= req.body.pick,
+            date= Date.now;
+		
+		// create, information comes from AJAX request from Angular
+        User.create({
+            name : name,
+			address : address,
+			email: email,
+			phone: phone,
+			perishable: perishable,
+			pick: pick,
+            date: date
+        }, function(err, users) {
+            if (err)
+                res.send(err);
+
+
         });
 
     });
@@ -55,10 +97,10 @@ app.delete('/api/locations/:location_id', function(req, res) {
 
 app.get('/api/query', function(req, res, next){
     
-    var limit = req.query.limit || 10;
+    var limit = 10;
 
     // get the max distance or set it to 8 kilometers
-    var maxDistance = req.query.distance || 8;
+    var maxDistance = 500;
 
     // we need to convert the distance to radians
     // the raduis of Earth is approximately 6371 kilometers
@@ -66,8 +108,8 @@ app.get('/api/query', function(req, res, next){
 
     // get coordinates [ <longitude> , <latitude> ]
     var coords = [];
-    coords[0] = req.query.longitude || 77.22336;
-    coords[1] = req.query.latitude || 28.6375771;	
+    coords[0] = req.query.longitude;
+    coords[1] = req.query.latitude;	
 	console.log(req.query.latitude);
 	console.log(req.query.longitude);
 
@@ -76,7 +118,7 @@ app.get('/api/query', function(req, res, next){
         $near: coords,
         $maxDistance: maxDistance
         }
-        }).limit(limit).exec(function(err, locations) {
+        }).exec(function(err, locations) {
         if (err) {
         return res.send(500, err);
         }

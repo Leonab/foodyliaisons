@@ -1,35 +1,21 @@
 <div class="col-md-7 col-md-offset-2">
-<h3>Showing <span class="label label-info">{{ locations.length }}</span> results :</h3>
-<h3><md-button ng-click="showall()" ui-sref="search" class="md-primary md-raised">Show All</md-button></h3>
+<md-card>
+<h3 class=".md-display-1">Showing <span class="label label-info">{{ locations.length }}</span> results :</h3>
+<md-button ng-click="showall()" ui-sref="search" class="md-primary md-raised">Show All</md-button>
 			<div ng-app="modalFormApp">
 			<div ng-controller="modalAccountFormController">
 			<div class="col-md-7 col-md-offset-2">
-			
 
-			<!--div ng-controller="AccordionDemoCtrl">
-  <script type="text/ng-template" id="group-template.html">
-    <div class="panel {{panelClass || 'panel-default'}}">
-      <div class="panel-heading">
-        <h4 class="panel-title" style="color:#fa39c3">
-          <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span
-            ng-class="{'text-muted': isDisabled}">{{heading}}</span></a>
-        </h4>
-      </div>
-      <div class="panel-collapse collapse" uib-collapse="!isOpen">
-        <div class="panel-body" style="text-align: right" ng-transclude></div>
-      </div>
-    </div>
-  </script>
-                </div-->
-
-                <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                <!-- LOOP OVER LOCATIONS-->
 				<v-accordion class="vAccordion--default" multiple>
 				<v-pane ng-repeat="location in locations" >
 				<v-pane-header>
                  {{ ::location.name }}
                 </v-pane-header>
 				<v-pane-content>
-				{{::location.text}}&nbsp;&nbsp;
+				{{::location.description}}
+				<br>{{::location.phone}}
+				<br>{{::location.email}}&nbsp;&nbsp;
 				<md-button ng-click="showForm()" class="md-raised md-warn">Send</md-button>
 				</v-pane-content>
                </v-pane>
@@ -39,31 +25,10 @@
     </div>
 				
 				
-				<p class="text-center" ng-show="loading">
-					<span class="fa fa-spinner fa-spin fa-3x"></span>
-				</p>
-
+				
             </div>
+</md-card>
 </div>
-
-<!--md-content class="md-padding" layout-xs="column" layout="row">
-  <div flex-xs flex-gt-xs="50" layout="column">
-<md-card ng-repeat="location in locations">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">{{location.name}}</span>
-            <span class="md-subhead">{{location.text}}</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button ng-click="showForm()">Send</md-button>
-        </md-card-actions>
-      </md-card>
-    <md-card>
-	</div>
-  
-</div>
-</md-content-->
 
 
 
