@@ -1,9 +1,9 @@
 var mongoose = require('mongoose'),
-    location = require('./models/location')()
+    location = require('./models/location')(),
 	user = require('./models/user')();
 var Location = mongoose.model('Location');
 var User = mongoose.model('User');
-var Storage = require('./models/storage');
+
 
 function getLocation(res){
 	Location.find(function(err, docs) {
@@ -11,7 +11,7 @@ function getLocation(res){
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				return res.send(err);
-			console.log(err);
+			
             console.log(docs);
 			return res.json(docs); // return all todos in JSON format
 		});
@@ -23,7 +23,7 @@ function getUser(res){
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				return res.send(err);
-			console.log(err);
+			
             console.log(docs);
 			return res.json(docs); // return all todos in JSON format
 		});
@@ -35,6 +35,13 @@ app.get('/api/locations', function(req, res) {
 
         // use mongoose to get all todos in the database
         getLocation(res);
+    });
+	
+	
+app.get('/api/lastuser', function(req, res) {
+
+        // use mongoose to get all todos in the database
+        getUser(res);
     });
 	
 	
@@ -54,26 +61,26 @@ app.post('/api/locations/', function(req, res) {
 
     });
 	
-app.post('/api/users/', function(req, res) {
+app.post('/api/users', function(req, res) {
 
-        var name = req.body.name,
+		
+		var name = req.body.name,
 			address = req.body.address,
 			email= req.body.email,
 			phone= req.body.phone,
-			perishable= req.body.perishable,
-			pick= req.body.pick,
-            date= Date.now;
+			perishable= req.body.perishable || true,
+			pick= req.body.pick || false;
 		
+		var user = new User({name : name, address : address, email: email, phone: phone, perishable: perishable, pick: pick});
 		// create, information comes from AJAX request from Angular
-        User.create({
+        /*User.create({
             name : name,
 			address : address,
 			email: email,
 			phone: phone,
 			perishable: perishable,
-			pick: pick,
-            date: date
-        }, function(err, users) {
+			pick: pick
+        },*/ user.save(function(err, users) {
             if (err)
                 res.send(err);
 

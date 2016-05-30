@@ -35,20 +35,6 @@ angular.module('locationController', ['ui.router'])
 		
 		
 		
-		$scope.createUser = function(rest) {
-			
-			//if ($scope.formData.text != undefined) {
-				
-        Users.create(rest)
-
-					// if successful creation, call our get function to get all the new locations
-					.success(function(data) {
-						$scope.loading = false;
-						$scope.formData = {}; // clear the form so our user is ready to enter another
-						$scope.users = data; // assign our new list of locations
-					});
-			
-		};
 
     // delete a todo after checking it
     $scope.deleteLocation = function(id) {
@@ -93,6 +79,33 @@ angular.module('locationController', ['ui.router'])
 	//formData.$setUntouched();
 	};
 	
+	
+	
+	
+		$scope.createUser = function() {
+			
+			//if ($scope.formData.text != undefined) {
+				
+        Users.create($scope.form)
+
+					// if successful creation, call our get function to get all the new locations
+					.success(function(data) {
+						$scope.loading = false;
+						$scope.formData = {}; // clear the form so our user is ready to enter another
+						$scope.users = data; // assign our new list of locations
+					});
+			
+		};
+		
+		
+		$scope.getLast = function() {
+			Users.getit()
+			.success(function(data){
+				console.log(data);
+			})
+		};
+			
+	
    
 	}])
 	
@@ -121,8 +134,11 @@ angular.module('locationController', ['ui.router'])
 		.state('search', {
             url: '/search',
             templateUrl: 'views/display.html'   
-        });
-		        
+        })
+		.state('response', {
+            url: '/response',
+            templateUrl: 'views/response.html'  
+		});	
 		
 		$locationProvider.html5Mode(true);
         

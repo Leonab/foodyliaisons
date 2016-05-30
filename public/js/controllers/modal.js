@@ -26,34 +26,24 @@ angular.module("modalFormApp", ['ui.bootstrap','ngAnimate','ngMaterial'])
         };
             }]);
 
-var ModalInstanceCtrl = function ($scope, $modalInstance, userForm, $http) {
+var ModalInstanceCtrl = function ($scope, $modalInstance, userForm, $http, $location, $timeout, $state) {
     $scope.form = {}
     $scope.submitForm = function () {
         if ($scope.form.userForm.$valid) {
             console.log('user form is in scope');
 			
 			
-			$http({
-              method  : 'POST',
-              url     : '/api/users/',
-              data    : $scope.form,  // pass in data as strings
-               headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
-            })
-            .success(function(data) {
-             console.log(data);
-			
-              if (!data.success) {
-               // if not successful, bind errors to error variables
-              console.log("error");
-              } else {
-               // if successful, bind success message to message
-              $scope.message = data.message;
-              }
-              });
-            
+			$http.post('/api/users',$scope.form)
+            .success(function(data,status,headers,config){
+				console.log("data inserted");
+			})
 			
 			
             $modalInstance.close('closed');
+			$location.path('/response');
+			$timeout(function() {
+              $state.go('home');
+              }, 3000);
         } else {
             console.log('userform is not in scope');
         }

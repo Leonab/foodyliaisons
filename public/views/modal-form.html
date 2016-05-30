@@ -7,38 +7,38 @@
         <md-input-container >
             <label>Name</label>
 			
-            <input type="text" name="name" class="form-control" ng-model="name" required>
+            <input type="text" name="name" class="form-control" ng-model="form.name" required>
             <p ng-show="form.userForm.name.$invalid && !form.userForm.name.$pristine" class="help-block">You name is required.</p>
         </md-input-container>
 
         <!-- ADDRESS -->
         <md-input-container >
             <label>Address</label>
-            <input type="text" name="address" class="form-control" ng-model="user.username" ng-minlength="3" required>
+            <input type="text" name="address" class="form-control" ng-model="form.address" ng-minlength="3" required>
             <p ng-show="form.userForm.username.$error.minlength" class="help-block">Address is too short.</p>
         </md-input-container >
 
         <!-- EMAIL -->
         <md-input-container >
             <label>Email</label>
-            <input type="email" name="email" class="form-control" ng-model="email" required>
+            <input type="email" name="email" class="form-control" ng-model="form.email" required>
             <p ng-show="form.userForm.email.$invalid && !form.userForm.email.$pristine" class="help-block">Enter a valid email.</p>
         </md-input-container >
 		
 		<!-- PHONE NUMBER -->
 		<md-input-container >
             <label>Phone Number</label>
-            <input type="number" name="phone" class="form-control" ng-model="phone" required>
+            <input type="number" name="phone" class="form-control" ng-model="form.phone" required>
             <p ng-show="form.userForm.phone.$invalid && !form.userForm.phone.$pristine" class="help-block">Enter a valid phone number.</p>
         </md-input-container >
 		
-		<md-radio-group>
+		<md-radio-group ng-model="form.perishable">
 		<label>Is The Item Perishable?</label>
-		<md-radio-button name="perishable" value="True">Yes</md-radio-button>
-		<md-radio-button value="False" class="md-primary">No</md-radio-button>
+		<md-radio-button name="perishable" value="true">Yes</md-radio-button>
+		<md-radio-button name="perishable" class="md-primary" value="false" >No</md-radio-button>
 		</md-radio-group>
 		
-		<md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-click="True">
+		<md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="form.pick">
         Today's Pickup?
         </md-switch>
 		
@@ -47,7 +47,7 @@
 
     </div>
     <div class="modal-footer">
-        <md-button class="md-raised md-primary" type="submit" ng-disabled="form.userForm.$invalid">OK</md-button>
+        <md-button class="md-raised md-primary" type="submit" ng-disabled="form.userForm.$invalid" ng-click="getLast()">OK</md-button>
         <md-button class="md-raised" ng-click="cancel()">Cancel</md-button>
     </div>
 </form>
