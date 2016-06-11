@@ -161,7 +161,7 @@ angular.module('locationController', ['ui.router'])
 			$scope.obj = $http.get('/api/lastuser');
 			$scope.obj.then(function(data) {
                // can use data here
-			   console.log("yami",data.data);
+			   console.log(data.data);
 			   $http.post('/SMS',data.data).
 			   success(function(data, status, headers, config) {}).
 			   error(function(data, status, headers, config) {});
