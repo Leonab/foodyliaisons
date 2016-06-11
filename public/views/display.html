@@ -1,5 +1,8 @@
-<div class="col-md-7 col-md-offset-2">
-<md-card>
+<div flex layout="row" layout-align="center center">
+<div flex-sm="100" flex-gt-sm="90" flex-gt-md="70" flex-gt-lg="50" class="md-whiteframe-z5">
+<md-content class="md-padding">
+
+
 <h3 class=".md-display-1">Showing <span class="label label-info">{{ locations.length }}</span> results :</h3>
 <md-button ng-click="showall()" ui-sref="search" class="md-primary md-raised">Show All</md-button>
 			<div ng-app="modalFormApp">
@@ -27,7 +30,9 @@
 				
 				
             </div>
-</md-card>
+			
+</md-content>			
+</div>
 </div>
 
 

@@ -34,9 +34,12 @@ var ModalInstanceCtrl = function ($scope, $modalInstance, userForm, $http, $loca
 			
 			
 			$http.post('/api/users',$scope.form)
-            .success(function(data,status,headers,config){
+            .success(function(data, status, header, config){
 				console.log("data inserted");
 			})
+			.error(function (data, status, header, config) {
+                console.log("error");
+            });
 			
 			
             $modalInstance.close('closed');

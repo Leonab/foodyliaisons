@@ -3,6 +3,8 @@ var mongoose = require('mongoose'),
 	user = require('./models/user')();
 var Location = mongoose.model('Location');
 var User = mongoose.model('User');
+var sms = require('../public/js/send_sms');
+var core = require('../public/js/send_mail');
 
 
 function getLocation(res){
@@ -80,10 +82,11 @@ app.post('/api/users', function(req, res) {
 			phone: phone,
 			perishable: perishable,
 			pick: pick
-        },*/ user.save(function(err, users) {
+        },*/ 
+		user.save(function(err) {
             if (err)
                 res.send(err);
-
+            
 
         });
 
@@ -134,6 +137,20 @@ app.get('/api/query', function(req, res, next){
     });
 		
    });
+   
+   
+   //===================================
+   
+   app.post('/contact-form',function(req, res){
+	   core.sendMail(req, res);
+   });
+   
+   app.post('/SMS',function(req,res){
+	   sms.call(req,res);
+   });
+   
+   
+   
    
  app.get('*', function(req, res) {
 		res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)

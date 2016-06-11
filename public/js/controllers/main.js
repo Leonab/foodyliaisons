@@ -1,7 +1,7 @@
 angular.module('locationController', ['ui.router'])
 
 	// inject the service factory into our controller
-	.controller('mainController', ['$scope','$http','Locations','Users', function($scope, $http, Locations, Users) {
+	.controller('mainController', ['$scope','$http','Locations','Users','$mdToast','$animate', function($scope, $http, Locations, Users, $mdToast, $animate) {
 		$scope.formData = {};
 		$scope.loading = true;
 
@@ -101,10 +101,75 @@ angular.module('locationController', ['ui.router'])
 		$scope.getLast = function() {
 			Users.getit()
 			.success(function(data){
-				console.log(data);
+				return data;
 			})
 		};
 			
+			
+			
+		//======================Mailer============================================
+     $scope.toastPosition = {
+            bottom: false,
+            top: true,
+            left: false,
+            right: true
+        };
+        $scope.getToastPosition = function () {
+            return Object.keys($scope.toastPosition)
+                .filter(function (pos) {
+                    return $scope.toastPosition[pos];
+                })
+                .join(' ');
+        };
+ 
+        $scope.sendMail = function () {
+ 
+            var data = {
+                contactName : this.contactName,
+                contactEmail : this.contactEmail,
+                contactMsg : this.contactMsg
+            };
+ 
+            // Simple POST request example (passing data) :
+            $http.post('/contact-form', data).
+                success(function(data, status, headers, config) {
+                    // this callback will be called asynchronously
+                    // when the response is available
+ 
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .content('Thanks for your message ' + data.contactName + ' You Rock!')
+                            .position($scope.getToastPosition())
+                            .hideDelay(5000)
+                    );
+ 
+                }).
+                error(function(data, status, headers, config) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
+					//console.log(data);
+                });
+ 
+        };		
+		
+		
+		
+		$scope.sendSms = function(){
+			//$scope.obj =[];
+			
+			//var obj = {};
+			$scope.obj = $http.get('/api/lastuser');
+			$scope.obj.then(function(data) {
+               // can use data here
+			   console.log("yami",data.data);
+			   $http.post('/SMS',data.data).
+			   success(function(data, status, headers, config) {}).
+			   error(function(data, status, headers, config) {});
+             });
+			
+			
+		};
+	
 	
    
 	}])
@@ -134,6 +199,10 @@ angular.module('locationController', ['ui.router'])
 		.state('search', {
             url: '/search',
             templateUrl: 'views/display.html'   
+        })
+		.state('contact', {
+            url: '/contact',
+            templateUrl: 'views/contact.html'   
         })
 		.state('response', {
             url: '/response',
