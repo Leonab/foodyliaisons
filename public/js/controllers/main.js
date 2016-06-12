@@ -36,7 +36,7 @@ angular.module('locationController', ['ui.router'])
 		
 		
 
-    // delete a todo after checking it
+    // delete a location after checking it
     $scope.deleteLocation = function(id) {
 			$scope.loading = true;
 
@@ -65,7 +65,7 @@ angular.module('locationController', ['ui.router'])
 		.success(function(data) {
 			        $scope.loading = false;
 			        $scope.locations = data;
-					//console.log(data);
+
 			var longitude =	data.results[0].geometry.location.lng;
 		    var latitude =	data.results[0].geometry.location.lat;
 			
@@ -78,17 +78,12 @@ angular.module('locationController', ['ui.router'])
 		        })
 				},300);
 	}
-	//$scope.formData = {};
-	//formData.$setPristine();
-	//formData.$setUntouched();
 	};
 	
 	
 	
 	
 		$scope.createUser = function() {
-			
-			//if ($scope.formData.text != undefined) {
 				
         Users.create($scope.form)
 

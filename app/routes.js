@@ -15,10 +15,11 @@ function getLocation(res){
 				return res.send(err);
 			
             console.log(docs);
-			return res.json(docs); // return all todos in JSON format
+			return res.json(docs); // return all locations in JSON format
 		});
 };
 
+//finds the last entry in the database
 function getUser(res){
 	User.findOne().sort({created_at: -1}).exec(function(err, docs) {
 
@@ -27,7 +28,7 @@ function getUser(res){
 				return res.send(err);
 			
             console.log(docs);
-			return res.json(docs); // return all todos in JSON format
+			return res.json(docs); // return all locations in JSON format
 		});
 };
 
@@ -35,14 +36,14 @@ module.exports = function(app) {
 	
 app.get('/api/locations', function(req, res) {
 
-        // use mongoose to get all todos in the database
+        // use mongoose to get all locations in the database
         getLocation(res);
     });
 	
 	
 app.get('/api/lastuser', function(req, res) {
 
-        // use mongoose to get all todos in the database
+        // use mongoose to get all locations in the database
         getUser(res);
     });
 	
@@ -57,7 +58,7 @@ app.post('/api/locations/', function(req, res) {
             if (err)
                 res.send(err);
 
-            // get and return all the todos after you create another
+            // get and return all the locations after you create another
             getLocation(res);
         });
 
@@ -75,14 +76,6 @@ app.post('/api/users', function(req, res) {
 		
 		var user = new User({name : name, address : address, email: email, phone: phone, perishable: perishable, pick: pick});
 		// create, information comes from AJAX request from Angular
-        /*User.create({
-            name : name,
-			address : address,
-			email: email,
-			phone: phone,
-			perishable: perishable,
-			pick: pick
-        },*/ 
 		user.save(function(err) {
             if (err)
                 res.send(err);
@@ -100,7 +93,7 @@ app.delete('/api/locations/:location_id', function(req, res) {
             if (err)
                 res.send(err);
 
-            // get and return all the todos after you create another
+            // get and return all the locations after you create another
             getLocation(res);
         });
     });
@@ -132,7 +125,6 @@ app.get('/api/query', function(req, res, next){
         if (err) {
         return res.send(500, err);
         }
-        //var texts=JSON.stringify(locations);
        return res.json(200, locations);
     });
 		

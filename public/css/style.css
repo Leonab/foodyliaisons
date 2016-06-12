@@ -1,19 +1,4 @@
-html                    { overflow-y:scroll; overflow-x:scroll;}/*
-body                    { background-color:#E6E6E6;}
-/*#yo                     { padding-top:70px; background: #10ABFD;}
-#todo-list              { padding-top:70px; margin-left:0px; margin-bottom:30px; background: #fff; }
-/*#blah                   {font-family: "Times New Roman", Georgia, Serif; font-size: 20px; width: 300px;}
-/*#blah:nth-child(odd) { background: yellow; }
-
-md-toolbar {
-	padding: 0px;
-	margin-top: 2px;
-}
-
-md-button {
-	margin:auto;
-    display:block;
-}*/
+html                    { overflow-y:scroll; overflow-x:scroll;}
 
 col-md-7 col-md-offset-2{
 	background: #E6E6E6;
