@@ -46,7 +46,9 @@ var ModalInstanceCtrl = function ($scope, $modalInstance, userForm, $http, $loca
 			$location.path('/response');
 			$timeout(function() {
               $state.go('home');
+			  $state.go($state.current, {}, {reload: true});
               }, 3000);
+			
         } else {
             console.log('userform is not in scope');
         }

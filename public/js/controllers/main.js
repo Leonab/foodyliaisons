@@ -58,7 +58,9 @@ angular.module('locationController', ['ui.router'])
 	$scope.geocode = function() {
 	    if ($scope.formData.text != undefined) {
 		    $scope.loading = true;
-	    var address = document.getElementById('address').value;
+		
+	    var address = document.getElementById('address').value || "new delhi";
+		setTimeout(function(){	
 		Locations.geocoder(address)
 		.success(function(data) {
 			        $scope.loading = false;
@@ -66,13 +68,15 @@ angular.module('locationController', ['ui.router'])
 					//console.log(data);
 			var longitude =	data.results[0].geometry.location.lng;
 		    var latitude =	data.results[0].geometry.location.lat;
+			
 		    Locations.finder(longitude, latitude)
 			.success(function(data) {
 			        $scope.loading = false;
 			        $scope.locations = data;
 					
-		        });
-		        });
+		        }); 
+		        })
+				},300);
 	}
 	//$scope.formData = {};
 	//formData.$setPristine();
