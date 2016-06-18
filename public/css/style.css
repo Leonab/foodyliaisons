@@ -1,14 +1,33 @@
-html                    { overflow-y:scroll; overflow-x:scroll;}
+html { 
+   overflow-y:scroll; overflow-x:scroll;
+  
+}
 
 col-md-7 col-md-offset-2{
 	background: #E6E6E6;
 }
 
 #haha {
-	margin-top: 180px;
+  /*min-height: 100%;*/
+  margin-top: 180px;
 }
 
-h4 { 
-   font-family: 'Libre Baskerville', serif; 
+#backg {
+  min-height: 100vh;
+  height:auto;
+  background-image: url(/images/middayfinal.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#null {
+  margin-top: 50px;
+  
+  
+}
+
+h4,h1 { 
+   font-family: 'Open Sans Condensed', sans-serif;
    font-weight: 400; 
 }
