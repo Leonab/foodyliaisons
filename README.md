@@ -1,7 +1,7 @@
 ## foodyliaisons ##
 Prototype for FoodyLiaisons 
 
-#### Made for TechNgage Hackathon by NASSCOM IT Services Council (NITSC) ####
+#### Displayed at TechNgage Hackathon by NASSCOM IT Services Council (NITSC) ####
 
 Just download the code-
 
