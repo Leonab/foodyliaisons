@@ -1,9 +1,9 @@
-## foodyliaisons ##
+## foodyliaisons
 Prototype for FoodyLiaisons 
 
-#### Displayed at TechNgage Hackathon by NASSCOM IT Services Council (NITSC) ####
+#### Displayed at TechNgage Hackathon by NASSCOM IT Services Council (NITSC)
 
-Just download the code-
+#####Just download the code-
 
 ```Javascript
 1) npm install
