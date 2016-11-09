@@ -1,7 +1,8 @@
 ## foodyliaisons
 Prototype for FoodyLiaisons 
 
-#### Displayed at TechNgage Hackathon by NASSCOM IT Services Council (NITSC)
+----
+Eradicating hunger. Peace by piece.
 
 #####Just download the code-
 
