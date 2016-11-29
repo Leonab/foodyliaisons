@@ -1,4 +1,4 @@
-## foodyliaisons
+## foodyliaisons     [![Build Status](https://travis-ci.org/Leonab/foodyliaisons.svg?branch=master)](https://travis-ci.org/Leonab/foodyliaisons)
 Prototype for FoodyLiaisons 
 
 ----
