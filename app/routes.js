@@ -21,7 +21,7 @@ function getLocation(res){
 
 //finds the last entry in the database
 function getUser(res){
-	User.findOne().sort({created_at: 1}).exec(function(err, docs) {
+	User.findOne().sort({created_at: -1}).exec(function(err, docs) {
 
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
