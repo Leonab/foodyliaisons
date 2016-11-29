@@ -79,7 +79,8 @@ app.post('/api/users', function(req, res) {
 		user.save(function(err) {
             if (err)
                 res.send(err);
-            return;
+			else
+				res.send("success");
 
         });
 
