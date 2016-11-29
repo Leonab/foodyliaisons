@@ -33,3 +33,10 @@ require('./app/routes.js')(app);
 app.listen(port, function() {
   console.log("App listening on port 3000");
 });   
+
+//mah life, mah rulezzz
+//keep supporting
+//keep loving
+//coz you got nothin to do
+// presenting git thug
+// harambe was killed
