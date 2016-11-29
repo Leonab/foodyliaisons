@@ -1,7 +1,7 @@
 angular.module('locationController', ['ui.router'])
 
 	// inject the service factory into our controller
-	.controller('mainController', ['$scope','$http','Locations','Users','$mdToast','$animate', function($scope, $http, Locations, Users, $mdToast, $animate) {
+	.controller('mainController', ['$scope','$http','Locations','Users','$mdToast','$animate','$timeout', function($scope, $http, Locations, Users, $mdToast, $animate, $timeout) {
 		$scope.formData = {};
 		$scope.loading = true;
 
@@ -150,6 +150,13 @@ angular.module('locationController', ['ui.router'])
                 });
  
         };		
+		
+		
+		$scope.delay = function(){
+			$timeout(function() {
+              $scope.sendSms();
+            },5000);
+		};
 		
 		
 		
