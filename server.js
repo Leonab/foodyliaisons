@@ -12,7 +12,7 @@ var fs = require('fs');
 var path = require('path');
 var methodOverride = require('method-override');
 
-mongoose.connect('localhost/foody'), function(err) {
+mongoose.connect('mongodb://leonab:password@ds039674.mongolab.com:39674/foody'), function(err) {
   if (err) throw err;
 };
 
