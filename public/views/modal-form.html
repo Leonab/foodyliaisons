@@ -28,7 +28,7 @@
 		<!-- PHONE NUMBER -->
 		<md-input-container >
             <label>Phone Number</label>
-            <input type="number" name="phone" class="form-control" ng-model="form.phone" required>
+            <input type="number" name="phone" class="form-control" ng-model="form.phone" max="10" required>
             <p ng-show="form.userForm.phone.$invalid && !form.userForm.phone.$pristine" class="help-block">Enter a valid phone number.</p>
         </md-input-container >
 		

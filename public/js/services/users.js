@@ -6,6 +6,7 @@ angular.module('userService', [])
 				return $http.get('/api/users');
 			},
 			create : function(form) {
+				console.log(form);
 				return $http.post('/api/users', form);
 			},
 			delete : function(id) {
