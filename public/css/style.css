@@ -3,22 +3,6 @@ html {
   
 }
 
-header {
-	background:#fff;
-	padding: 1%;
-		display: flex; 
-	
-	/* Spread out the elements inside the header. */
-	justify-content: space-between;
-
-	/* Align items vertically in the center. */
-	align-items: center;
-}
-
-header a {
-	padding:1%;
-}
-
 col-md-7 col-md-offset-2{
 	background: #E6E6E6;
 }
@@ -47,3 +31,4 @@ h4,h1,h3 {
    font-family: 'Open Sans Condensed', sans-serif;
    font-weight: 400; 
 }
+0
